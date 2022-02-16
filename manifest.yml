@@ -1,0 +1,47 @@
+---
+language: staticfile
+default_versions:
+- name: nginx
+  version: 1.21.x
+dependencies:
+- name: nginx
+  version: 1.20.2
+  uri: https://buildpacks.cloudfoundry.org/dependencies/nginx-static/nginx-static_1.20.2_linux_x64_cflinuxfs3_4ef9ee19.tgz
+  sha256: 4ef9ee19332b1496b90c1dde72e2b5606429fdbd15d9ba269c066d2c87a2062c
+  cf_stacks:
+  - cflinuxfs3
+  source: http://nginx.org/download/nginx-1.20.2.tar.gz
+  source_sha256: 958876757782190a1653e14dc26dfc7ba263de310e04c113e11e97d1bef45a42
+- name: nginx
+  version: 1.21.6
+  uri: https://buildpacks.cloudfoundry.org/dependencies/nginx-static/nginx-static_1.21.6_linux_x64_cflinuxfs3_0ce0c2b1.tgz
+  sha256: 0ce0c2b1ed0f854b67f58abb436df1ac3b4a53e0e1a7d0df05360511b2d426d6
+  cf_stacks:
+  - cflinuxfs3
+  source: http://nginx.org/download/nginx-1.21.6.tar.gz
+  source_sha256: 66dc7081488811e9f925719e34d1b4504c2801c81dee2920e5452a86b11405ae
+pre_package: scripts/build.sh
+include_files:
+- CHANGELOG
+- CONTRIBUTING.md
+- ISSUE_TEMPLATE
+- LICENSE
+- NOTICE
+- PULL_REQUEST_TEMPLATE
+- README.md
+- VERSION
+- bin/compile
+- bin/detect
+- bin/finalize
+- bin/release
+- bin/supply
+- manifest.yml
+dependency_deprecation_dates:
+- version_line: 1.20.x
+  name: nginx
+  date: 2022-05-25
+  link: https://nginx.org/
+- version_line: 1.21.x
+  name: nginx
+  date: 2022-05-25
+  link: https://nginx.org/
